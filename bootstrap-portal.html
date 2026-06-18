@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Hub - Bootstrap 5</title>
+    
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        body { background-color: #f8f9fa; }
+        .hero { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; }
+        .card-hover:hover { transform: translateY(-8px); transition: all 0.3s; }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar (Exercise 10.1) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Community Hub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero py-5 text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Welcome to Your Community!</h1>
+            <p class="lead">Discover events, connect with neighbors, and participate in local activities.</p>
+            <button class="btn btn-light btn-lg">Join an Event</button>
+        </div>
+    </section>
+
+    <div class="container my-5">
+
+        <!-- Grid Layout (Exercise 3 & 4) -->
+        <h2 class="mb-4">Upcoming Events</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 card-hover shadow">
+                    <img src="https://via.placeholder.com/400x250?text=Tech+Meetup" class="card-img-top" alt="Tech Meetup">
+                    <div class="card-body">
+                        <h5 class="card-title">Tech Innovators Meetup</h5>
+                        <p class="card-text text-muted">15 July 2025 • New York</p>
+                        <button class="btn btn-primary">Register Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 card-hover shadow">
+                    <img src="https://via.placeholder.com/400x250?text=Cultural+Night" class="card-img-top" alt="Cultural Night">
+                    <div class="card-body">
+                        <h5 class="card-title">Cultural Night</h5>
+                        <p class="card-text text-muted">28 June 2025 • Los Angeles</p>
+                        <button class="btn btn-primary">Register Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 card-hover shadow">
+                    <img src="https://via.placeholder.com/400x250?text=Sports+Day" class="card-img-top" alt="Sports Day">
+                    <div class="card-body">
+                        <h5 class="card-title">Community Sports Day</h5>
+                        <p class="card-text text-muted">20 July 2025 • Chicago</p>
+                        <button class="btn btn-primary">Register Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Registration Form (Exercise 8) -->
+        <div class="row mt-5">
+            <div class="col-lg-6">
+                <h3>Register for an Event</h3>
+                <form id="regForm">
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Event Type</label>
+                        <select class="form-select" id="eventType">
+                            <option value="">Choose Event</option>
+                            <option value="Workshop">Workshop</option>
+                            <option value="Concert">Concert</option>
+                            <option value="Sports">Sports Day</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit Registration</button>
+                </form>
+            </div>
+
+            <!-- Sidebar (Exercise 4.1) -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <strong>Quick Info</strong>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">Next Event: <strong>Tech Meetup</strong></p>
+                        <button class="btn btn-outline-primary">View All Events</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 text-center">
+        <div class="container">
+            <p>&copy; 2025 Local Community Hub. All Rights Reserved.</p>
+            <div class="mt-2">
+                <i class="bi bi-facebook mx-2"></i>
+                <i class="bi bi-twitter mx-2"></i>
+                <i class="bi bi-instagram mx-2"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Simple form handling
+        document.getElementById('regForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("✅ Registration Successful! Thank you for joining.");
+            this.reset();
+        });
+    </script>
+</body>
+</html>

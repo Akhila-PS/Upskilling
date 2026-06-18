@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .eventImg {
+            width: 220px;
+            height: 160px;
+            border: 4px solid #1e40af;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .eventImg:hover {
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (HTML Exercise 2) -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#events">Past Events</a>
+        <a href="#dynamic-events">Upcoming Events</a>
+        <a href="#register">Register</a>
+        <a href="help.html" target="_blank">Help ↗</a>
+    </nav>
+
+    <!-- Welcome Banner (HTML Exercise 3) -->
+    <div id="welcomeBanner">
+        Welcome, <strong>Resident!</strong> 
+        <span style="color: #fef08c; font-weight: bold;">🎉 Free Entry this Weekend!</span>
+        <span class="highlight">Register Now</span>
+    </div>
+
+    <section id="home">
+        <h2>🏠 Home</h2>
+        <p>Welcome to the Local Community Event Portal. Find events, register, and connect with your neighbors.</p>
+    </section>
+
+    <!-- Image Gallery (HTML Exercise 4) - Full Table -->
+    <section id="events">
+        <h2>📸 Past Event Gallery</h2>
+        <table>
+            <caption>Community Events - Photo Gallery</caption>
+            <tr>
+                <td>
+                    <img src="https://via.placeholder.com/220x160?text=Sports+Day" class="eventImg" 
+                         alt="Sports Day" title="Annual Sports Day 2024" ondblclick="enlargeImage(this, 'Sports Day 2024')">
+                    <p>Annual Sports Day 2024</p>
+                </td>
+                <td>
+                    <img src="https://via.placeholder.com/220x160?text=Cultural+Night" class="eventImg" 
+                         alt="Cultural Night" title="Cultural Night 2024" ondblclick="enlargeImage(this, 'Cultural Night 2024')">
+                    <p>Cultural Night 2024</p>
+                </td>
+                <td>
+                    <img src="https://via.placeholder.com/220x160?text=Food+Festival" class="eventImg" 
+                         alt="Food Festival" title="Food Festival 2024" ondblclick="enlargeImage(this, 'Food Festival 2024')">
+                    <p>Food Festival 2024</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="https://via.placeholder.com/220x160?text=Tree+Planting" class="eventImg" 
+                         alt="Tree Planting" title="Tree Plantation Drive" ondblclick="enlargeImage(this, 'Tree Plantation Drive')">
+                    <p>Tree Plantation Drive</p>
+                </td>
+                <td>
+                    <img src="https://via.placeholder.com/220x160?text=Health+Camp" class="eventImg" 
+                         alt="Health Camp" title="Health Camp 2024" ondblclick="enlargeImage(this, 'Health Camp 2024')">
+                    <p>Health Camp 2024</p>
+                </td>
+                <td>
+                    <img src="https://via.placeholder.com/220x160?text=Music+Fair" class="eventImg" 
+                         alt="Music Fair" title="Music & Arts Fair" ondblclick="enlargeImage(this, 'Music & Arts Fair')">
+                    <p>Music & Arts Fair</p>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Dynamic Events (JavaScript Exercises) -->
+    <section id="dynamic-events">
+        <h2>🎯 Upcoming Events</h2>
+        <select id="categoryFilter">
+            <option value="">All Events</option>
+            <option value="Workshop">Workshop</option>
+            <option value="Cultural">Cultural</option>
+            <option value="Sports">Sports</option>
+        </select>
+        <div id="eventsContainer" class="events-grid"></div>
+    </section>
+
+    <!-- Registration Form (HTML Exercise 5 + JS Exercise 11) -->
+    <section id="register">
+        <h2>📋 Event Registration Form</h2>
+        <form id="regForm">
+            <label>Full Name: <input type="text" id="fullName" required autofocus></label><br><br>
+            <label>Email: <input type="email" id="email" required></label><br><br>
+            <label>Date: <input type="date" id="eventDate" required></label><br><br>
+            <label>Phone: <input type="tel" id="phone" onblur="validatePhone(this)"></label>
+            <span id="phoneError" style="color:red;"></span><br><br>
+            
+            <label>Event Type: 
+                <select id="eventType">
+                    <option value="">-- Select --</option>
+                    <option value="Workshop">Workshop</option>
+                    <option value="Concert">Concert</option>
+                    <option value="Sports">Sports Day</option>
+                </select>
+            </label><br><br>
+            
+            <button type="submit">Register Now</button>
+        </form>
+        <output id="confirmMsg"></output>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
